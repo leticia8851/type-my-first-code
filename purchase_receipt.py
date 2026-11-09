@@ -1,3 +1,6 @@
+from os import name
+
+
 print("Welcome TO CATUC SHOP")
 print("THANKS FOR YOUR PATRONAGE")
 num_items = int(input("Enter the number of items purchased: "))
@@ -26,16 +29,15 @@ discount = subtotal * discount_rate
 total_cost = subtotal - discount
 # Display receipt
 print("=" * 75)
-print("             CATUC SUPERMARKET")
-print("                 PURCHASE RECEIPT") 
+print("=====================================================")
+print("                 CATUC SHOP RECEIPT") 
 print("=" * 75)
-print(f"{ 'S/N' :<6}{'Description' :<18}{'Quantity' :<12}"end=
-      f"{'Unit Price' :<18}{'Total Price' :<15}")
+print("'S/N   Description        Quantity    Unit Price     Total Price")
 print("=" * 75)
 # Display each item
 for i, item in enumerate(items, start=1):
-    name, quantity, unit price, total_price = item
-    print(f"{i:<6}{name:<18}{quantity:<12}{unit_price:<18.2f}{total_price:<15.2f}") 
+    name, quantity, unit_price , total_price = item
+    print(i,"       ", name, "           ",   quantity,"               ", unit_price,"               ",total_price) 
 print("=" * 75)
 print(f"Subtotal:                {subtotal:.2f} FCFA")
 print(f"Discount rate:                {discount_rate * 100:.0f}%")
